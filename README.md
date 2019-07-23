@@ -12,14 +12,13 @@ This project is developed, owned, and maintained by the SRE - Orchestration
 pod at Wayfair.
 
 This repository uses [`mkdocs`](https://www.mkdocs.org/) for documentation
-and [`dep`](https://golang.github.io/dep/) for dependency management.
-Dependencies are tracked as part of the repository.
+and [`go modules`](https://github.com/golang/go/wiki/Modules) for dependency management.
+Dependencies are tracked as part of the repository in `vendor/`.
 
 ## Requirements:
 
-- [Terraform](https://www.terraform.io/downloads.html) >= 0.10.x
-- [Golang](https://golang.org/doc/install) >= 1.8
-- [Dep](https://golang.github.io/dep/docs/installation.html) >= 0.4.1
+- [Terraform](https://www.terraform.io/downloads.html) >= 0.12.5
+- [Golang](https://golang.org/doc/install) >= 1.12
 - [GNU Make](https://www.gnu.org/software/make/) >= 4.2.1
 
 Follow the setup instructions provided on the install sections of their
@@ -42,15 +41,15 @@ section:
 
 2. Include the utility repo in your provider:
 
-    Update your `Gopkg.toml` to include the repo as a dependency:
+    SEE [Go Wiki - Modules#daily-workflow](https://github.com/golang/go/wiki/Modules#daily-workflow)
+    for more information.
+
+    Update your `go.mod` to include the repo as a dependency:
 
     ```
-    # Gopkg.toml
+    # go.mod
 
-    [[constraint]]
-      name = "github.com/wayfair/terraform-provider-utils"
-      # constraint to a specific version, release here:
-      version = "=1.0.0"
+    require github.com/wayfair/terraform-provider-utils v2.0.0
     ```
 
     Include the needed package(s) to your source files:
@@ -73,12 +72,6 @@ section:
     )
 
     // ...
-    ```
-
-    Update your repository to include the constraint with `dep`:
-
-    ```
-    $> dep ensure
     ```
 
 ## Documentation

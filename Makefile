@@ -79,7 +79,7 @@ GOPKG := $${GOPATH}/pkg/$(HOST_OS)_$(HOST_ARCH)/github.com/wayfair/terraform-pro
 
 # All of the Makefile targets are not the names of files and therefore are
 # phony targets
-.PHONY: all build clean clean-godoc default ensure format formatcheck godoc install test vet
+.PHONY: all build clean clean-godoc default format formatcheck godoc install test vet
 
 # Default target - build the project
 # Use the special built-in target name and human conventions
@@ -106,13 +106,6 @@ clean-godoc:
 	@if [ -d $(GODOC_OUT_DIR) ]; then \
 		rm -rf $(GODOC_OUT_DIR); \
 	fi;
-
-# Ensure the project dependencies are in sync and up-to-date.  This will read
-# the dependencies and constraints in the Gopkg.toml file and update the
-# /vendor directory and Gopkg.lock file to reflect the constraints.
-ensure:
-	@echo 'Ensuring project dependencies are up to date...'
-	@dep ensure
 
 # Runs "go fmt" on the codebase and writes the output back to the source files
 format:
