@@ -273,7 +273,6 @@ ARGUMENTS
     template files recursively from this location. This value is relative
     to -root. Defaults to 'templates'
   -templates-ext=TEMPLATES_EXT
-    Extension for template files. Defaults to '.template'.
-`,
+    Extension for template files. Defaults to '.template'.`,
 	)
 }
