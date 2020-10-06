@@ -3,7 +3,7 @@
 package helper
 
 import (
-	"github.com/hashicorp/terraform/helper/schema"
+	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
 
 // DataSourceSchemaFromResourceSchema copies the schema map from a resource for

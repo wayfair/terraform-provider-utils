@@ -242,7 +242,7 @@ import (
   // include the autodoc package:
   autodoc "github.com/wayfair/terraform-provider-utils/autodoc"
 
-  "github.com/hashicorp/terraform/helper/schema"
+  "github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
 
 func main() {

@@ -5,7 +5,7 @@ package validation
 import (
 	"strings"
 
-	"github.com/hashicorp/terraform/helper/schema"
+	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
 
 // DiffSuppressStringIgnoreCase suppresses a Resource's schema diff for a
