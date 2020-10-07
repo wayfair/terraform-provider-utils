@@ -1,4 +1,4 @@
-module github.com/wayfair/terraform-provider-utils
+module github.com/wayfair/terraform-provider-utils/v2
 
 require (
 	github.com/hashicorp/terraform v0.12.5
